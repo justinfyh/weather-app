@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Temperature from './Temperature'
 import ToggleSwitch from "./ToggleSwitch";
+import { grid } from "ldrs";
 
 const Weather = () => {
     const [weatherData, setWeatherData] = useState(null);
@@ -11,6 +12,11 @@ const Weather = () => {
     const [city1, setCity] = useState('');
     const [isLoading, setIsLoading] = useState(null);
     let navigate = useNavigate();
+
+
+    grid.register()
+
+
 
     useEffect(() => {
         setIsLoading(true);
@@ -56,7 +62,15 @@ const Weather = () => {
                 </div>
             </header>
 
-            {isLoading && <p>Loading...</p>}
+            {isLoading && 
+            <div>
+                <l-grid
+                size="115"
+                speed="1.5" 
+                color="white"    
+                ></l-grid>
+            </div>
+            }
 
             {weatherData && (
             <div className="data-container">
