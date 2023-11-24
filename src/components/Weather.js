@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 
 const Weather = () => {
     const [city, setCity] = useState('');
@@ -51,7 +54,7 @@ const Weather = () => {
             <a href="/"><h1>Weather</h1></a>
             <input type="text" placeholder="Enter city" value={ city } onKeyDown={handleEnter} onChange={(e) => setCity(e.target.value)}/>
 
-            <button onClick={ getData }>Get Weather</button>
+            <button onClick={ getData }><FontAwesomeIcon icon={faArrowRight} /></button>
 
             {weatherData && (
             <div>

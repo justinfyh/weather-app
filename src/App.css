@@ -58,7 +58,7 @@ a {
 .Weather-container input {
   width: 20%;
   padding: 0.5em;
-  margin: 0.5em 0;
+  margin: 0.5em 0.5em;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -71,7 +71,7 @@ a {
   border: solid white;
   background-color: #282c34;
   border-radius: 60px;
-  border-width: 0.12em;
+  border-width: 0.15em;
   padding: 0.6em 1.4em;
   font-size: 1rem;
   color: white;
