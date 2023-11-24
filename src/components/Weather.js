@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from "react";
+
 import Temperature from './Temperature'
+import { useParams } from "react-router-dom";
 
 
-const Weather = () => {
-    const [city, setCity] = useState('');
-    // const [latitude, setLatitude] = useState('');
-    // const [longtitude, setLongtitude] = useState('');
+const Weather = (props) => {
     const [weatherData, setWeatherData] = useState(null);
-
+    let { city } = useParams();
+    // const { cityname } = useParams();
+    // const [search, setSearch] = useSearchParams()
+    // setSearch(location.search)
     // const getLocation = async () => {
     //     const apiKey = 'f138a38b8516bedbc16e2966e3d59a4a';
     //     const apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
@@ -23,6 +23,10 @@ const Weather = () => {
     //         console.error('Error getting city:', error);
     //     }
     // }
+
+    useEffect(() => {
+            getWeatherData();        
+      }, [city]);
 
     const handleEnter = (event) => {
         if (event.key === 'Enter') {
@@ -40,27 +44,19 @@ const Weather = () => {
             const response = await fetch(apiUrl);
             const data = await response.json();
             setWeatherData(data);
-          } catch (error) {
+        } catch (error) {
             console.error('Error getting weather data:', error);
-          }
-    }
-
-    const getData = () => {
-        // getLocation();
-        getWeatherData();
+        }
     }
 
     return (
         <div className="Weather-container">
             <a href="/"><h1>Weather</h1></a>
-            <input type="text" placeholder="Enter city" value={ city } onKeyDown={handleEnter} onChange={(e) => setCity(e.target.value)}/>
-
-            <button onClick={ getData }><FontAwesomeIcon icon={faArrowRight} /></button>
 
             {weatherData && (
             <div>
                 <h3>{weatherData.name}</h3>
-                <p>Temperature: {weatherData.main.temp} K</p>
+                 <p>Temperature: {weatherData.main.temp} K</p>
                 <p>Looks: {weatherData.weather[0].main}</p>
                 <p>Feels like: {weatherData.main.feels_like} K</p>
                 <p>Pressure: {weatherData.main.pressure} Pa</p>

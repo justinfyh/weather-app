@@ -55,7 +55,7 @@ a {
   color: white;
 }
 
-.Weather-container input {
+input {
   width: 20%;
   padding: 0.5em;
   margin: 0.5em 0.5em;
@@ -67,7 +67,7 @@ a {
   transition: border-color 0.3s ease-in-out;
 }
 
-.Weather-container button {
+.button {
   border: solid white;
   background-color: #282c34;
   border-radius: 60px;
@@ -82,7 +82,7 @@ a {
   transition: background-color 0.3s ease-in-out;
 }
 
-.Weather-container button:hover {
+.button:hover {
   cursor: pointer;
   background-color: white;
   color: #282c34;
