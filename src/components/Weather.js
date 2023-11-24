@@ -20,6 +20,13 @@ const Weather = () => {
     //     }
     // }
 
+    const handleEnter = (event) => {
+        if (event.key === 'Enter') {
+          getWeatherData();
+        }
+      };
+    
+
     const getWeatherData = async () => {
         const apiKey = 'f138a38b8516bedbc16e2966e3d59a4a';
         // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${ latitude }&lon=${ longtitude }&appid=${apiKey}`;
@@ -42,7 +49,7 @@ const Weather = () => {
     return (
         <div className="Weather-container">
             <a href="/"><h1>Weather</h1></a>
-            <input type="text" placeholder="Enter city" value={ city } onChange={(e) => setCity(e.target.value)}/>
+            <input type="text" placeholder="Enter city" value={ city } onKeyDown={handleEnter} onChange={(e) => setCity(e.target.value)}/>
 
             <button onClick={ getData }>Get Weather</button>
 
