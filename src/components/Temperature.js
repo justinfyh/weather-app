@@ -1,4 +1,3 @@
-// TemperatureDisplay.js
 import React, { useEffect, useState } from 'react';
 import { useTemperatureContext } from './TemperatureContext';
 

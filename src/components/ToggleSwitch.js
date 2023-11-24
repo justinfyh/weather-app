@@ -1,4 +1,3 @@
-// ToggleSwitch.js
 import React from 'react';
 import { useTemperatureContext } from './TemperatureContext';
 
