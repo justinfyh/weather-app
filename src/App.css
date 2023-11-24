@@ -168,3 +168,59 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(26px);
 }
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.data-container .main-section {
+  display: flex;
+  margin: auto;
+  font-size: 2rem;
+  align-items: center;
+  height: 2em;
+}
+
+.data-container .main-section h3 {
+  /* font-size: 2rem; */
+  margin-right: 3em;
+}
+
+.data-container .main-section p {
+  margin: 0;
+}
+
+.data-container .main-section .looks-like {
+  margin-top: 0.1em;
+  font-size: 1rem;
+
+}
+
+.data-container .sub-section {
+  width: 20%;
+  margin: auto;
+}
+
+.data-container .sub-section ul {
+  list-style-type: none;
+  padding: 0; /* Remove default padding on ul */
+}
+
+.data-container .sub-section ul li {
+  border-bottom: 1px solid white; /* Add a solid border with the specified color */
+  padding: 0.5em 0; /* Optional: Add padding to li elements for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3em;
+}
+
+/* Style the last li to remove the bottom border */
+.data-container .sub-section ul li:last-child {
+  border-bottom: none;
+}
+
+.temperature-display {
+  margin: 0;
+}

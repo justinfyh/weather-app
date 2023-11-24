@@ -4,15 +4,25 @@ import Temperature from './Temperature';
 const WeatherDetails = ({ weatherData }) => {
   return (
     <div className="data-container">
-      <h3>{weatherData.name}</h3>
-      <p>Temperature: <Temperature kelvin={weatherData.main.temp}/></p>
-      <p>Feels like: <Temperature kelvin={weatherData.main.feels_like}/></p>
-      <p>{weatherData.weather[0].main}</p>
-      <p>Pressure: {weatherData.main.pressure} Pa</p>
-      <p>Humidity: {weatherData.main.humidity}%</p>
-      <p>Visibility: {weatherData.visibility} km</p>
-      <p>Wind: {weatherData.wind.speed} km/h</p>
-      <p>Direction: {weatherData.wind.deg}°</p>
+      <div className='main-section'>
+        <h3>{weatherData.name}</h3>
+        <div>
+        <p><Temperature kelvin={weatherData.main.temp}/></p>
+        <p className='looks-like'>{weatherData.weather[0].main}</p>
+        </div>
+        
+      </div>
+
+      <div className='sub-section'>
+        <ul>
+          <li><p>Feels like:</p> <p><Temperature kelvin={weatherData.main.feels_like}/></p></li>
+          <li><p>Pressure:</p> <p>{weatherData.main.pressure} Pa</p></li>
+          <li><p>Humidity:</p> <p>{weatherData.main.humidity}%</p></li>
+          <li><p>Visibility:</p> <p>{weatherData.visibility} km</p></li>
+          <li><p>Wind:</p> <p>{weatherData.wind.speed} km/h</p></li>
+          <li><p>Direction:</p> <p>{weatherData.wind.deg}°</p></li>
+        </ul>
+      </div>
     </div>
   );
 };
