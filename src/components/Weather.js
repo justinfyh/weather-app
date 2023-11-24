@@ -35,17 +35,20 @@ const Weather = () => {
 
     return (
         <div className="Weather-container">
-            <header>
+            <header className="Weather-header">
                 <a href="/"><h1>Weather</h1></a>
-                <p>heu</p>
-                <input type="text" 
-                    placeholder="Enter city" 
-                    value={ city1 } 
-                    onKeyDown={handleEnter} 
-                    onChange={(e) => setCity(e.target.value)}/>
-                <Link to={`/weather/${city1}`} className="button">
-                    <FontAwesomeIcon icon={faArrowRight} />
-                </Link>
+                
+                <div>
+                    <input type="text" 
+                        placeholder="Enter city" 
+                        value={ city1 } 
+                        onKeyDown={handleEnter} 
+                        onChange={(e) => setCity(e.target.value)}/>
+                    <Link to={`/weather/${city1}`} className="button">
+                        <FontAwesomeIcon icon={faArrowRight} />
+                    </Link>
+                </div>
+                {/* <p></p> */}
             </header>
             
 
