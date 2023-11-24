@@ -43,11 +43,21 @@ a {
   text-decoration: none;
 }
 
+/* WEATHER STYLING */
+
 .Weather-container {
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
   color: white;
+}
+
+.Weather-container header {
+  padding: 1em;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  height: 8vh;
 }
 
 .Weather-container h1 {

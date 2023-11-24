@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Temperature from './Temperature'
 
 const Weather = () => {
     const [weatherData, setWeatherData] = useState(null);
     let { city } = useParams();
+    const [city1, setCity] = useState('');
+    let navigate = useNavigate();
 
     useEffect(() => {
             getWeatherData();        
@@ -23,9 +27,27 @@ const Weather = () => {
         }
     }
 
+    const handleEnter = (event) => {
+        if (event.key === 'Enter') {
+            navigate(`/weather/${city1}`);
+        }
+    };
+
     return (
         <div className="Weather-container">
-            <a href="/"><h1>Weather</h1></a>
+            <header>
+                <a href="/"><h1>Weather</h1></a>
+                <p>heu</p>
+                <input type="text" 
+                    placeholder="Enter city" 
+                    value={ city1 } 
+                    onKeyDown={handleEnter} 
+                    onChange={(e) => setCity(e.target.value)}/>
+                <Link to={`/weather/${city1}`} className="button">
+                    <FontAwesomeIcon icon={faArrowRight} />
+                </Link>
+            </header>
+            
 
             {weatherData && (
             <div>
