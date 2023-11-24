@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Temperature from './Temperature'
+import ToggleSwitch from "./ToggleSwitch";
 
 const Weather = () => {
     const [weatherData, setWeatherData] = useState(null);
@@ -37,7 +38,8 @@ const Weather = () => {
         <div className="Weather-container">
             <header className="Weather-header">
                 <a href="/"><h1>Weather</h1></a>
-                <Temperature temperature={weatherData.main.temp}  />
+                <ToggleSwitch />
+                
                 <div>
                     <input type="text" 
                         placeholder="Enter city" 
@@ -56,6 +58,7 @@ const Weather = () => {
             <div>
                 <h3>{weatherData.name}</h3>
                 <p>Temperature: {weatherData.main.temp} K</p>
+                <Temperature kelvin={weatherData.main.temp}/>
                 <p>Looks: {weatherData.weather[0].main}</p>
                 <p>Feels like: {weatherData.main.feels_like} K</p>
                 <p>Pressure: {weatherData.main.pressure} Pa</p>
