@@ -39,6 +39,10 @@
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 .Weather-container {
   text-align: center;
   background-color: #282c34;
@@ -48,6 +52,7 @@
 
 .Weather-container h1 {
   margin-top: 0;
+  color: white;
 }
 
 .Weather-container input {
