@@ -37,10 +37,11 @@ const Weather = () => {
     return (
         <div className="Weather-container">
             <header className="Weather-header">
-                <a href="/"><h1>Weather</h1></a>
-                <ToggleSwitch />
-                
-                <div>
+                <div className="Header-container">
+                    <a href="/"><h1>Weather</h1></a>
+                    <ToggleSwitch />
+                </div>
+                <div className="Input-container">
                     <input type="text" 
                         placeholder="Enter city" 
                         value={ city1 } 
@@ -50,23 +51,19 @@ const Weather = () => {
                         <FontAwesomeIcon icon={faArrowRight} />
                     </Link>
                 </div>
-                {/* <p></p> */}
             </header>
-            
 
             {weatherData && (
-            <div>
+            <div className="data-container">
                 <h3>{weatherData.name}</h3>
-                <p>Temperature: {weatherData.main.temp} K</p>
-                <Temperature kelvin={weatherData.main.temp}/>
-                <p>Looks: {weatherData.weather[0].main}</p>
-                <p>Feels like: {weatherData.main.feels_like} K</p>
+                <p>Temperature: <Temperature kelvin={weatherData.main.temp}/></p>
+                <p>Feels like: <Temperature kelvin={weatherData.main.feels_like}/></p>
+                <p>{weatherData.weather[0].main}</p>
                 <p>Pressure: {weatherData.main.pressure} Pa</p>
                 <p>Humidity: {weatherData.main.humidity}%</p>
                 <p>Visibility: {weatherData.visibility} km</p>
                 <p>Wind: {weatherData.wind.speed} km/h</p>
                 <p>Direction: {weatherData.wind.deg}°</p>
-                
             </div>
             )}
         </div>

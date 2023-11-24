@@ -27,7 +27,7 @@ const TemperatureDisplay = ({ kelvin, unit }) => {
   return (
     <div>
       <p>
-        {convertedTemperature} {unit}
+        {convertedTemperature} {isCelsius ? '°C' : '°F'}
       </p>
     </div>
   );

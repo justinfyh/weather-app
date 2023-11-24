@@ -6,14 +6,19 @@ const ToggleSwitch = () => {
   const { isCelsius, toggleTemperatureUnit } = useTemperatureContext();
 
   return (
-    <label className="toggle-switch">
-      <input
-        type="checkbox"
-        checked={isCelsius}
-        onChange={toggleTemperatureUnit}
-      />
-      <span className="slider round"></span>
-    </label>
+    <div className="toggle-container">
+      <label className="toggle-switch">
+        <input
+          type="checkbox"
+          checked={isCelsius}
+          onChange={toggleTemperatureUnit}
+        />
+        <span className="slider round"></span>
+        
+      </label>
+      <p>{isCelsius ? '°C' : '°F'}</p>
+    </div>
+    
   );
 };
 

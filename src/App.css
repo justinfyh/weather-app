@@ -60,7 +60,13 @@ a {
   margin: auto;
   height: 5em;
 }
-.Weather-header div {
+.Weather-header .Header-container {
+  display: flex;
+  width: 50%;
+
+  /* justify-content: flex-e; */
+}
+.Weather-header .Input-container {
   display: flex;
   width: 50%;
   justify-content: flex-end;
@@ -111,14 +117,18 @@ input {
   color: #282c34;
 }
 
-
-
-
 .toggle-switch {
+  margin: 1em;
   position: relative;
-  display: inline-block;
+  display: flex;
   width: 60px;
   height: 34px;
+}
+
+.toggle-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .toggle-switch input {
