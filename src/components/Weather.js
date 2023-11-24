@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Temperature from './Temperature'
 
 
 const Weather = () => {
@@ -67,7 +68,7 @@ const Weather = () => {
                 <p>Visibility: {weatherData.visibility} km</p>
                 <p>Wind: {weatherData.wind.speed} km/h</p>
                 <p>Direction: {weatherData.wind.deg}°</p>
-
+                <Temperature temperature={weatherData.main.temp}  />
             </div>
             )}
         </div>
