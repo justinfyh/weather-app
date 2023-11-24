@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import Temperature from './Temperature'
+import WeatherDetails from "./WeatherDetails";
 import ToggleSwitch from "./ToggleSwitch";
 import { grid } from "ldrs";
 
@@ -69,24 +69,11 @@ const Weather = () => {
                 speed="1.5" 
                 color="white"    
                 ></l-grid>
-            </div>
-            }
+            </div> }
 
-            {weatherData && (
-            <div className="data-container">
-                <h3>{weatherData.name}</h3>
-                <p>Temperature: <Temperature kelvin={weatherData.main.temp}/></p>
-                <p>Feels like: <Temperature kelvin={weatherData.main.feels_like}/></p>
-                <p>{weatherData.weather[0].main}</p>
-                <p>Pressure: {weatherData.main.pressure} Pa</p>
-                <p>Humidity: {weatherData.main.humidity}%</p>
-                <p>Visibility: {weatherData.visibility} km</p>
-                <p>Wind: {weatherData.wind.speed} km/h</p>
-                <p>Direction: {weatherData.wind.deg}°</p>
-            </div>
-            )}
+            {weatherData && <WeatherDetails weatherData={weatherData} /> }
         </div>
-    )
-}
+    );
+};
 
 export default Weather;
