@@ -17,11 +17,15 @@ const Main = () => {
 
     return (
         <div className="App-header">
-            {/* <header > */}
                 <p>Weather App</p>
-                <input type="text" placeholder="Enter city" value={ city } onKeyDown={handleEnter} onChange={(e) => setCity(e.target.value)}/>
-                <Link to={`/weather/${city}`} className="button"><FontAwesomeIcon icon={faArrowRight} /></Link>
-            {/* </header> */}
+                <input type="text" 
+                    placeholder="Enter city" 
+                    value={ city } 
+                    onKeyDown={handleEnter} 
+                    onChange={(e) => setCity(e.target.value)}/>
+                <Link to={`/weather/${city}`} className="button">
+                    <FontAwesomeIcon icon={faArrowRight} />
+                </Link>
         </div>
     );
 };
