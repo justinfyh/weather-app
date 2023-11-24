@@ -30,9 +30,19 @@ const TemperatureConverter = ({ temperature }) => {
         {convertedTemperature} {isCelsius ? '°C' : '°F'}
       </p>
       <p>
-        Celsius
-        <input type="checkbox" checked={isCelsius} onChange={toggleTemperatureUnit} />
+        {/* Celsius */}
+        {/* <input type="checkbox" checked={isCelsius} onChange={toggleTemperatureUnit} /> */}
       </p>
+      <label className="toggle-switch">
+        <input
+          type="checkbox"
+          checked={isCelsius}
+          onChange={toggleTemperatureUnit}
+        />
+        <span className="slider round"></span>
+        
+      </label>
+      <p>Celsius/Farenheit</p>
     </div>
   );
 };

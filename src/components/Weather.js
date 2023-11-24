@@ -37,7 +37,7 @@ const Weather = () => {
         <div className="Weather-container">
             <header className="Weather-header">
                 <a href="/"><h1>Weather</h1></a>
-                
+                <Temperature temperature={weatherData.main.temp}  />
                 <div>
                     <input type="text" 
                         placeholder="Enter city" 
@@ -63,7 +63,7 @@ const Weather = () => {
                 <p>Visibility: {weatherData.visibility} km</p>
                 <p>Wind: {weatherData.wind.speed} km/h</p>
                 <p>Direction: {weatherData.wind.deg}°</p>
-                <Temperature temperature={weatherData.main.temp}  />
+                
             </div>
             )}
         </div>
