@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -40,4 +41,44 @@
 
 .Weather-container {
   text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
+}
+
+.Weather-container h1 {
+  margin-top: 0;
+}
+
+.Weather-container input {
+  width: 20%;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.Weather-container button {
+  border: solid white;
+  background-color: #282c34;
+  border-radius: 60px;
+  border-width: 0.12em;
+  padding: 0.6em 1.4em;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 1em 0;
+  display: inline-block;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.Weather-container button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #282c34;
 }
