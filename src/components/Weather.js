@@ -9,20 +9,23 @@ const Weather = () => {
     const [weatherData, setWeatherData] = useState(null);
     let { city } = useParams();
     const [city1, setCity] = useState('');
+    const [isLoading, setIsLoading] = useState(null);
     let navigate = useNavigate();
 
     useEffect(() => {
-            getWeatherData();        
+        setIsLoading(true);
+        getWeatherData();   
       }, [city]);
     
     const getWeatherData = async () => {
         const apiKey = 'f138a38b8516bedbc16e2966e3d59a4a';
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-
+        setWeatherData(null);
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
             setWeatherData(data);
+            setIsLoading(false);
         } catch (error) {
             console.error('Error getting weather data:', error);
         }
@@ -52,6 +55,8 @@ const Weather = () => {
                     </Link>
                 </div>
             </header>
+
+            {isLoading && <p>Loading...</p>}
 
             {weatherData && (
             <div className="data-container">
