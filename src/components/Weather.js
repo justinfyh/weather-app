@@ -46,7 +46,7 @@ const Weather = () => {
         <div className="Weather-container">
             <header className="Weather-header">
                 <div className="Header-container">
-                    <a href="/"><h1>Weather</h1></a>
+                    <a href="/"><h1>Weathedr</h1></a>
                     <ToggleSwitch />
                 </div>
                 <div className="Input-container">
