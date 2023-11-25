@@ -20,20 +20,19 @@ const Weather = () => {
         setIsLoading(true);
         getWeatherData();   
     }, [city]);
-    
+
     const getWeatherData = async () => {
-        const apiKey = 'f138a38b8516bedbc16e2966e3d59a4a';
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-
+        setIsLoading(true);
         setWeatherData(null);
-
+      
         try {
-            const response = await fetch(apiUrl);
-            const data = await response.json();
-            setWeatherData(data);
-            setIsLoading(false);
+          const response = await fetch(`/api/weather?city=${city}`);
+          const data = await response.json();
+          setWeatherData(data);
         } catch (error) {
-            console.error('Error getting weather data:', error);
+          console.error('Error getting weather data:', error);
+        } finally {
+          setIsLoading(false);
         }
     };
 

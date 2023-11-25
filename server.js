@@ -9,6 +9,21 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+app.get('/api/weather', async (req, res) => {
+    const { city } = req.query;
+    const apiKey = 'f138a38b8516bedbc16e2966e3d59a4a';
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+  
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      res.json(data);
+    } catch (error) {
+      console.error('Error getting weather data:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
