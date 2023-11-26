@@ -1,4 +1,6 @@
-# Showcase
+# Weather
+
+## Showcase
 
 ![ezgif-2-ca5bd7969f](https://github.com/justinfyh/weather-app/assets/100667353/1daa15d1-0055-4b6b-a8a6-b72f81c9732a)
 
